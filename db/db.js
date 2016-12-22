@@ -5,6 +5,8 @@ var Schema = mongoose.Schema;
 
 var cardPriceSchema = new Schema({
     CardName : String,
+    CardNumber : Number,
+    CardSet : String,
     CardPrice : Number,
     Date : Date
 });
