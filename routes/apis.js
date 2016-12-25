@@ -97,7 +97,7 @@ router.post('/message', function(req, res, next){
             CardPrice.find({ CardNumber : CardNum }, { _id : 0, __v : 0}).exec()
             .then(function(price){
                 console.log(price);
-                cardname = price[0]['CardName'].toUpperCase().replace(' ', '-');
+                cardname = price[0]['CardName'].toUpperCase().replace('\ \g', '-');
                 if(price.length == 1){
                     replyVal = price[0]['CardName'] + ':\n';
                     replyVal += '$' + price[0]['CardPrice'];
