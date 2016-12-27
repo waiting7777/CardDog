@@ -18,9 +18,26 @@ function replyMsgToLineWithImage(replyToken, replyVal, cardname){
         replyToken : replyToken,
         messages : [
             {
-                type : 'image',
-                originalContentUrl : cardurl,
-                previewImageUrl : cardurl
+                type : 'template',
+                altText : 'this is a buttons template',
+                template : {
+                    type : 'buttons',
+                    thumbnailImageUrl : cardurl,
+                    title : 'Menu',
+                    text : 'Please select',
+                    actions : [
+                        {
+                            type : 'postback',
+                            label : 'buy',
+                            data : 'action=buy&itemid=123'
+                        },
+                        {
+                            type : 'uri',
+                            label : 'View detail',
+                            uri : cardurl
+                        }
+                    ]
+                }
             },
             {
                 type : 'text',
